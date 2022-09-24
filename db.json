@@ -83,6 +83,13 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2022-09-24",
+      "description": "Pay Netflix",
+      "category": "Entertainment",
+      "amount": "12",
+      "id": 13
     }
   ]
 }
