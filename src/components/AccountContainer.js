@@ -34,9 +34,18 @@ function AccountContainer() {
 	}
 
 	console.log(transactions);
+
+	function handleSearch(search) {
+		setTransactions((transactions) =>
+			transactions.filter(
+				(transaction) => transaction.description.includes[search]
+			)
+		);
+	}
+
 	return (
 		<div>
-			<Search />
+			<Search searching={handleSearch} />
 			<AddTransactionForm submission={handleSubmissionUpdate} />
 			<TransactionsList transactions={transactions} />
 		</div>
