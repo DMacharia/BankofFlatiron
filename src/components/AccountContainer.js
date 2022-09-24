@@ -7,6 +7,7 @@ function AccountContainer() {
 	//use useEffect hook to fetch data
 	//create stateful transaction variables
 	const [transactions, setTransactions] = useState([]);
+
 	useEffect(() => {
 		fetch("http://localhost:8001/transactions")
 			.then((res) => res.json())
@@ -36,16 +37,16 @@ function AccountContainer() {
 	console.log(transactions);
 
 	function handleSearch(search) {
-		setTransactions((transactions) =>
-			transactions.filter(
-				(transaction) => transaction.description.includes[search]
-			)
+		const filterItem = transactions.filter((data) =>
+			data.description.includes(search)
 		);
+
+		setTransactions(filterItem);
 	}
 
 	return (
 		<div>
-			<Search searching={handleSearch} />
+			<Search searchingFn={handleSearch} />
 			<AddTransactionForm submission={handleSubmissionUpdate} />
 			<TransactionsList transactions={transactions} />
 		</div>

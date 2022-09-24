@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function Search({ searchingFn }) {
 	const [search, setSearch] = useState("");
+    //state variable, setter function
 
 	function handleChange(e) {
 		setSearch(e.target.value);
